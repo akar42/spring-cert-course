@@ -36,3 +36,5 @@ bin/
 .vscode/
 README.html
 
+**/*.log
+**/tmp/
