@@ -5,6 +5,11 @@ import common.money.Percentage;
 import rewards.Dining;
 import rewards.internal.account.Account;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
@@ -18,18 +23,25 @@ import javax.persistence.Transient;
 //                            MERCHANT_NUMBER varchar(10) not null,
 //                            NAME varchar(80) not null,
 //                            BENEFIT_PERCENTAGE decimal(5,2) not null,
-//                            BENEFIT_AVAILABILITY_POLICY varchar(1) not null, unique(MERCHANT_NUMBER));
+//                            BENEFIT_AVAILABILITY_POLICY varchar(1) not null, unique(MERCHANT_NUMBER));	
+@Entity
+@Table(name = "T_RESTAURANT")
 public class Restaurant {
 
+	@Id
+	@Column(name = "ID")
 	private Long entityId;
 
+	@Column(name = "MERCHANT_NUMBER", nullable = false)
 	private String number;
 
+	@Column(nullable = false)
 	private String name;
 
 	// This is not a simple mapping as Percentage is not a simple type.
 	// You need to map Percentage.value from a column in T_RESTAURANT.  If unsure,
 	// look at how Beneficiary does it.
+	@AttributeOverride(name = "value", column = @Column(name = "BENEFIT_PERCENTAGE", nullable = false))
 	private Percentage benefitPercentage;
 
 
