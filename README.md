@@ -1,5 +1,4 @@
 # Core Spring and Spring Boot Lab Projects
 
-Labs for the Core Spring and Spring Boot courses
+Labs for the Core Spring and Spring Boot courses (main parts of [Spring Sertified Professional](https://spring.academy/paths/spring-certified-professional-2023) learning path)
 
-To import these labs into your IDE, import the parent pom `lab/pom.xml` as Maven projects or `lab/build.gradle` as Gradle projects.
