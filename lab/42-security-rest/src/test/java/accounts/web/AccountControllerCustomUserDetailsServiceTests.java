@@ -7,13 +7,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -45,7 +43,6 @@ public class AccountControllerCustomUserDetailsServiceTests {
     private AccountService accountService;
 
     @Test
-    @Disabled
     @WithUserDetails("joe")
     public void accountDetails_with_joe_credentials_should_return_200() throws Exception {
 
@@ -63,7 +60,6 @@ public class AccountControllerCustomUserDetailsServiceTests {
     }
 
     @Test
-    @Disabled
     @WithUserDetails("mary")
     public void accountDetails_with_mary_credentials_should_return_200() throws Exception {
 
